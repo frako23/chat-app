@@ -27,9 +27,15 @@ export const sendMessage = async (req, res) => {
       conversation.messages.push(newMessage._id);
     }
 
-    await conversation.save()
-    await newMessage.save()
-    
+    //SOCKET IO FUNCTIONALITY WILL GO HERE
+
+    // await conversation.save()
+    // await newMessage.save()
+
+    // this will ron in parallel
+
+    await Promise.all([conversation.save(), newMessage.save()]);
+
     res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage controller: ", error.message);
