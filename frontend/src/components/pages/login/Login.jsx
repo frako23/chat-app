@@ -31,7 +31,7 @@ function Login() {
           </div>
 
           <a
-            href="#"
+            href="/signup"
             className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block"
           >
             {"Don't"} have an account?
