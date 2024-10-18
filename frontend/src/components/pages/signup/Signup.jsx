@@ -105,8 +105,15 @@ function SignUp() {
           </a>
 
           <div>
-            <button className="btn btn-accent btn-block btn-sm mt-2">
-              SignUp
+            <button
+              className="btn btn-accent btn-block btn-sm mt-2"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                'SignUp'
+              )}
             </button>
           </div>
         </form>
