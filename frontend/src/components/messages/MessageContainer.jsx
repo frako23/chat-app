@@ -6,10 +6,12 @@ import { TiMessages } from 'react-icons/ti'
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversations()
+
   useEffect(() => {
     //cleanup function (unmounts)
     return () => setSelectedConversation(null)
   }, [])
+
   return (
     <div className="md:min-w-[450px] flex flex-col">
       {!selectedConversation ? (
